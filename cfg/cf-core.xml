@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2008 Free Software Foundation, Inc.                                                                                                                                   
+                                                                                                                                                                                         
+     Copying and distribution of this file, with or without modification,                                                                                                                
+     are permitted in any medium without royalty provided the copyright                                                                                                                  
+     notice and this notice are preserved.  -->
+<!DOCTYPE feature SYSTEM "gdb-target.dtd">
+<feature name="org.gnu.gdb.coldfire.core">
+  <flags id="lmp_psr" size="4">
+    <field name="C" start="0" end="0"/>
+    <field name="V" start="1" end="1"/>
+    <field name="Z" start="2" end="2"/>
+    <field name="N" start="3" end="3"/>
+    <field name="X" start="4" end="4"/>
+	
+    <field name="I0" start="8" end="8"/>
+    <field name="I1" start="9" end="9"/>
+    <field name="I2" start="10" end="10"/>
+	
+    <field name="M" start="12" end="12"/>
+    <field name="S" start="13" end="13"/>
+	
+    <field name="T0" start="14" end="14"/>
+    <field name="T1" start="15" end="15"/>
+  </flags>
+  
+  <reg name="d0" bitsize="32" type="data_ptr"/>
+  <reg name="d1" bitsize="32" type="data_ptr"/>
+  <reg name="d2" bitsize="32" type="data_ptr"/>
+  <reg name="d3" bitsize="32" type="data_ptr"/>
+  <reg name="d4" bitsize="32" type="data_ptr"/>
+  <reg name="d5" bitsize="32" type="data_ptr"/>
+  <reg name="d6" bitsize="32" type="data_ptr"/>
+  <reg name="d7" bitsize="32" type="data_ptr"/>
+  
+  <reg name="a0" bitsize="32" type="data_ptr"/>
+  <reg name="a1" bitsize="32" type="data_ptr"/>
+  <reg name="a2" bitsize="32" type="data_ptr"/>
+  <reg name="a3" bitsize="32" type="data_ptr"/>
+  <reg name="a4" bitsize="32" type="data_ptr"/>
+  <reg name="a5" bitsize="32" type="data_ptr"/>
+  <reg name="fp" bitsize="32" type="data_ptr"/>
+  <reg name="sp" bitsize="32" type="data_ptr"/>
+
+  <reg name="sr" bitsize="32" type="lmp_psr"/>
+  <reg name="pc" bitsize="32" type="code_ptr"/>
+</feature>
+
