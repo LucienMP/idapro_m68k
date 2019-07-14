@@ -40,16 +40,22 @@ Usage
 Copy the various files into the IDA installation.
 Create a m68k based deubg db, and set the gdb remote connection.     
 
-Known Bugs
+Known Issues
 -------
 
-* XML varies from GDB core as it needs flags
+* XML varies from GDB core as it needs SR flags
 
-* Bugs in gdbstub in later QEMU versions 3.x
- - should combine SR and CCR - see patches in QEMU mai list,
- - step operation regression,
- - vCont format regression.
+* GDB handling in 7.1 had some issues, recommend 7.3 or later
+  * crash if GDB port disconnects (fixed) and you step/run
+  * thinks its connected to a GDB server if the port is blocked/not open (fixed by error message)
+  * keeps jumping back to PC if you make edits elsewhere in database (fixed)
+  * mishandling of types in 64bit version resulting in crash (fixed)
 
+* Bugs in gdb handling in QEMU versions 3.x, recommend 4.1
+  * SR should combine SR and CCR, ( https://patchew.org/QEMU/20190609105154.GA16755@localhost.localdomain/ )
+  * step operation regression, ( https://patchew.org/QEMU/20190526075056.33865-1-lucienmp_antispam@yahoo.com/ )
+  * vCont format regression. ( https://patchew.org/QEMU/20190325110452.6756-1-luc.michel@greensocs.com/ )
+  * Exception entry steps twice
 
     
 Authoring information
